@@ -1,0 +1,57 @@
+/*======= Global Elements ======= */
+* {
+  box-sizing: border-box;
+}
+
+  body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* #searchBox {
+  display: flex;
+  align-items: center;
+  border: 1px solid blue;
+  flex-direction: column;
+  width: 85%;
+
+} */
+
+ .container,
+ #searchBox{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container img {
+  margin-bottom: 3em;
+
+  flex: 0;
+}
+
+/* ============ /*
+/*=== Media Query == */
+
+@media (min-width: 768px) {
+  body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2em;
+  }
+
+  .container img {
+    margin-right: 3em;
+    flex: 1;
+}
+}
