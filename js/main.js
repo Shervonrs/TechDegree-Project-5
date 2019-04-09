@@ -15,4 +15,4 @@ $("#searchBox").on("keyup", function(){
     }
     console.log(input);
   }
-})
+});
