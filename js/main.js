@@ -1,10 +1,18 @@
 
-$(document).ready(function(){
-  $("#searchBox").on("keyup", function() {
-    const content= $(this).val().toLowerCase();
-    console.log(content)
-    $("a[data-type]").filter(function() {
-    $(this).toggle($(this).text().toLowerCase().indexOf(content) > -1)
-    });
-  });
-});
+
+$("#searchBox").on("keyup", function(){
+  const input = $("#searchBox").val().toLowerCase();
+  const photo =$("a[href*='photos']");
+  const im= $("img[src*='photos']");
+
+  for(let i = 0; i < photo.length; i++){
+    const content= $(photo[i]).attr('data-title').toLowerCase();
+    const $attr = $(im[i]).attr('alt').toLowerCase();
+    if(content.indexOf(input) > -1 || $attr.indexOf(input) > -1) {
+      photo[i].style.display = '';
+    } else {
+      photo[i].style.display = 'none';
+    }
+    console.log(input);
+  }
+})
